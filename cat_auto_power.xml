@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Cat Auto Power</Name>
+  <Repository>ppicazo/cat-auto-power:latest</Repository>
+  <Registry>https://hub.docker.com/r/ppicazo/cat-auto-power</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://k6sh.com</Support>
+  <Project>https://k6sh.com</Project>
+  <Overview>This is a template for running a custom script to connect to a server, monitor power output, and adjust drive power accordingly.</Overview>
+  <Category>Other</Category>
+  <WebUI/>
+  <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/emby-icon.png</Icon>
+  <Config Name="IP_ADDRESS" Target="IP_ADDRESS" Default="192.168.1.100" Mode="rw" Description="Server IP address" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.100</Config>
+  <Config Name="PORT" Target="PORT" Default="13013" Mode="rw" Description="Server port" Type="Variable" Display="always" Required="true" Mask="false">13013</Config>
+  <Config Name="TARGET_PWR" Target="TARGET_PWR" Default="10" Mode="rw" Description="Target power" Type="Variable" Display="always" Required="true" Mask="false">10</Config>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/catautopower</HostDir>
+      <ContainerDir>/app</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+</Container>
